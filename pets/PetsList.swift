@@ -10,8 +10,8 @@ import SwiftUI
 
 struct PetsList: View {
     var Pets: [Pet] = [
-        Pet(name: "Diva", kind: "Dog", trick: "Begging", picture: "dog"),
-        Pet(name: "Cosmo", kind: "Dog", trick: "Crying", picture: "dog2"),
+        Pet(name: "Diva", kind: "Dog", trick: "Begging", picture: "diva"),
+        Pet(name: "Cosmo", kind: "Dog", trick: "Crying", picture: "cosmo"),
         Pet(name: "Lizzy", kind: "Lizard", trick: "Sun bathing", picture: "liz"),
         Pet(name: "Turt", kind: "Turtle", trick: "Standing still", picture: "turt"),
         Pet(name: "Mountain Dew", kind: "Bird", trick: "Singing his heart out", picture: "bird"),
@@ -33,7 +33,11 @@ struct PetsList: View {
                         }
                     }
                 }
-            }.navigationTitle("Pets")
+            }
+                .navigationTitle("Pets")
+                .navigationDestination(for: Pet.self) { pet in
+                    PetsDetailView(pet: pet)
+                }
         }
     }
 }
