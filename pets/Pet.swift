@@ -40,7 +40,7 @@ class Pet: Identifiable, Hashable {
 
 
 func random_color() -> Color {
-    let colors: [Color] = [.red, .blue, .green, .yellow, .orange, .gray, .cyan]
+    let colors: [Color] = [Color(.systemRed), Color(.systemBlue), Color(.systemGreen), Color(.systemYellow), Color(.systemOrange), Color(.systemGray), Color(.systemCyan)]
     let randIndex = Int(arc4random_uniform(UInt32(colors.count)))
     
     return colors[randIndex]
