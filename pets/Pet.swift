@@ -6,31 +6,28 @@
 //
 
 import Foundation
+import UIKit
 import SwiftUI
+import SwiftData
 
-@Observable
-class Pet: Identifiable, Hashable {
-    static func == (lhs: Pet, rhs: Pet) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
+@Model
+class Pet: Identifiable {
     var name: String
     var kind: String
     var trick: String
     var picture: String
-    var id = UUID()
-    var color = random_color()
-    var hasAward: Bool = false
+    var rating: Int
+    var id: UUID
+    var hasAward: Bool
     
     init(name: String, kind: String, trick: String, picture: String) {
         self.name = name
         self.kind = kind
         self.trick = trick
         self.picture = picture
+        self.rating = Int(arc4random_uniform(11))
+        self.id = UUID()
+        self.hasAward = false
     }
     
     func Award() {
@@ -38,10 +35,29 @@ class Pet: Identifiable, Hashable {
     }
 }
 
-
-func random_color() -> Color {
-    let colors: [Color] = [Color(.systemRed), Color(.systemBlue), Color(.systemGreen), Color(.systemYellow), Color(.systemOrange), Color(.systemGray), Color(.systemCyan)]
-    let randIndex = Int(arc4random_uniform(UInt32(colors.count)))
-    
-    return colors[randIndex]
+struct CodableColor: Codable {
+    var red: CGFloat
+    var green: CGFloat
+    var blue: CGFloat
+    var alpha: CGFloat
 }
+
+func randomColor() -> CodableColor {
+    let colors: [UIColor] = [.systemBlue, .systemRed, .systemGreen]
+    let colorIndex = arc4random_uniform(UInt32(colors.count))
+    let color = colors[Int(colorIndex)]
+    
+    var red: CGFloat = 0
+    var green: CGFloat = 0
+    var blue: CGFloat = 0
+    var alpha: CGFloat = 0
+    color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+    
+    return CodableColor(red: red, green: green, blue: blue, alpha: alpha)
+}
+
+func getColor(color: CodableColor) -> Color {
+    return Color(red: color.red, green: color.green, blue: color.blue, opacity: color.alpha)
+}
+
+

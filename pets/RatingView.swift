@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct RatingView: View {
-    @State private var rating: Int = 5
+    var pet: Pet
 
     var body: some View {
         VStack {
-            RatingGauge(rating: $rating)
+            RatingGauge(rating: pet.rating)
                 .padding([.leading, .trailing])
             HStack {
                 Button(action: {
                     withAnimation {
-                        rating -= 1
+                        pet.rating -= 1
                     }
                 }) {
                     Image(systemName: "minus.circle")
                 }
-                .disabled(rating == 0)
+                .disabled(pet.rating == 0)
                 
-                Text(String(format: "%02d", rating))
-                    .contentTransition(.numericText(value: Double(rating)))
+                Text(String(format: "%02d", pet.rating))
+                    .contentTransition(.numericText(value: Double(pet.rating)))
                     .font(.largeTitle)
                     .fontDesign(.monospaced)
                     .frame(width: 45)
@@ -33,12 +33,12 @@ struct RatingView: View {
                 
                 Button(action: {
                     withAnimation {
-                        rating += 1
+                        pet.rating += 1
                     }
                 }) {
                     Image(systemName: "plus.circle")
                 }
-                .disabled(rating == 10)
+                .disabled(pet.rating == 10)
             }
         }
         .frame(width: 150, height: 150)
@@ -49,7 +49,7 @@ struct RatingView: View {
 }
 
 struct RatingGauge: View {
-    @Binding var rating: Int
+    var rating: Int
     
     var body: some View {
         Gauge(value: Double(rating), in: 0...10) {
@@ -59,5 +59,5 @@ struct RatingGauge: View {
 }
 
 #Preview {
-    RatingView()
+    RatingView(pet: Pet(name: "Diva", kind: "Dog", trick: "Begging", picture: "diva"))
 }

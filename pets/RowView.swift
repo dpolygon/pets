@@ -37,7 +37,7 @@ struct RowView: View {
             .clipShape(.circle)
             .shadow(radius: 3)
             .overlay {
-                Circle().stroke(pet.color, lineWidth: 2)
+                Circle().stroke(.green, lineWidth: 2)
             }
     }
 }

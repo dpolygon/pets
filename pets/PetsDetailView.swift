@@ -20,6 +20,8 @@ struct PetsDetailView: View {
                 .foregroundStyle(.secondary)
         }
         Spacer()
+        RatingView(pet: pet)
+        Spacer()
     }
     
     private var profileImage: some View {
@@ -30,7 +32,7 @@ struct PetsDetailView: View {
             .clipShape(.circle)
             .shadow(radius: 20)
             .overlay(
-                Circle().stroke(pet.color, lineWidth: 4)
+                Circle().stroke(.green, lineWidth: 4)
             )
     }
 }

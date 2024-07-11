@@ -16,6 +16,7 @@
 		4D1BAB592C3C771C004D5D9E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4D1BAB582C3C771C004D5D9E /* .gitignore */; };
 		4D1BAB5B2C3C9E8C004D5D9E /* PetsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BAB5A2C3C9E8C004D5D9E /* PetsDetailView.swift */; };
 		4D1BAB5F2C3CE25D004D5D9E /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1BAB5E2C3CE25D004D5D9E /* RatingView.swift */; };
+		4D8310312C3E3FE900F22D61 /* PetsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8310302C3E3FE900F22D61 /* PetsContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4D1BAB582C3C771C004D5D9E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		4D1BAB5A2C3C9E8C004D5D9E /* PetsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsDetailView.swift; sourceTree = "<group>"; };
 		4D1BAB5E2C3CE25D004D5D9E /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		4D8310302C3E3FE900F22D61 /* PetsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				4D1BAB492C39F139004D5D9E /* Assets.xcassets */,
 				4D1BAB4B2C39F139004D5D9E /* pets.entitlements */,
 				4D1BAB4C2C39F139004D5D9E /* Preview Content */,
+				4D8310302C3E3FE900F22D61 /* PetsContainer.swift */,
 			);
 			path = pets;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				4D1BAB552C3BA1F7004D5D9E /* PetsList.swift in Sources */,
 				4D1BAB5F2C3CE25D004D5D9E /* RatingView.swift in Sources */,
 				4D1BAB462C39F137004D5D9E /* petsApp.swift in Sources */,
+				4D8310312C3E3FE900F22D61 /* PetsContainer.swift in Sources */,
 				4D1BAB5B2C3C9E8C004D5D9E /* PetsDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
